@@ -1,4 +1,4 @@
-.travis.yml.origionallanguage: python
+language: python
 python:
   - 2.7
   # - nightly
@@ -7,6 +7,4 @@ os:
 install:
   - pip install -r requirements.txt
 
-script:
-  - python test.py
-  - ./docker_build.sh
+script: python test.py
