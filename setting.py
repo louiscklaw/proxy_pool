@@ -55,14 +55,18 @@ PROXY_FETCHER = [
     "freeProxy08",
     "freeProxy09",
     "freeProxy10",
-    "freeProxy11"
+    "freeProxy11",
+    "freeProxy13",
+    "freeProxy14_1",
+    "freeProxy14_2",
+    "freeProxy15",
 ]
 
 # ############# proxy validator #################
 # 代理验证目标网站
 HTTP_URL = "http://httpbin.org"
 
-HTTPS_URL = "https://www.qq.com"
+HTTPS_URL = "https://httpbin.org"
 
 # 代理验证时超时时间
 VERIFY_TIMEOUT = 10
@@ -74,7 +78,7 @@ MAX_FAIL_COUNT = 0
 # MAX_FAIL_RATE = 0.1
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
-POOL_SIZE_MIN = 20
+POOL_SIZE_MIN = 200
 
 # ############# proxy attributes #################
 # 是否启用代理地域属性

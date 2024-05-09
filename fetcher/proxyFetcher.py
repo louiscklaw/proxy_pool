@@ -232,6 +232,64 @@ class ProxyFetcher(object):
     #         for proxy in proxies:
     #             yield ':'.join(proxy)
 
+    def freeProxy13():
+        origin_url = 'https://proxylist.geonode.com/api/proxy-list?protocols=http%2Chttps&limit=500&page=1'
+        
+        request = WebRequest()
+        r = request.get(origin_url, timeout=10)
+    
+        for i in range(0,len(r.json()['data'])):
+            ip = r.json()['data'][i]['ip']
+            port = r.json()['data'][i]['port']
+            yield ip+":"+port
+
+    def freeProxy14_1():
+        urls = [
+            'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt',
+            'https://yakumo.rei.my.id/ALL',
+            ]
+        
+        request = WebRequest()
+        for url in urls:
+            try:
+                r = request.get(url, timeout=10)
+                    
+                for i in r.text.split('\n'):
+                    yield i
+            except Exception as e:
+                print(e)
+
+    def freeProxy14_2():
+        urls = [
+            'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt',
+            'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt',
+            'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt',
+            'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/https.txt',
+            'https://yakumo.rei.my.id/ALL',
+            ]
+        
+        request = WebRequest()
+        for url in urls:
+            try:
+                r = request.get(url, timeout=10)
+                    
+                for i in r.text.split('\n'):
+                    yield i
+            except Exception as e:
+                print(e)
+
+    def freeProxy15():
+        urls = [
+            'https://raw.githubusercontent.com/zloi-user/hideip.me/main/https.txt',
+            'https://raw.githubusercontent.com/zloi-user/hideip.me/main/http.txt',
+            ]
+        
+        request = WebRequest()
+        for url in urls:
+            r = requests.get(url)
+            for i in r.text.split('\n'):
+                yield(i.split(':')[0]+":"+i.split(':')[1])
+
 
 if __name__ == '__main__':
     p = ProxyFetcher()

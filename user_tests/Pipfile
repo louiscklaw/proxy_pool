@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "==2.20.0"
+gunicorn = "==19.9.0"
+lxml = "==4.9.2"
+redis = "==3.5.3"
+apscheduler = "==3.2.0"
+click = "==7.0"
+flask = "==1.0"
+werkzeug = "==0.15.5"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

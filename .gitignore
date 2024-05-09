@@ -2,3 +2,11 @@
 docs/_build
 *.pyc
 *.log
+**/node_modules
+**/.env
+**/*.log
+**/*.lock
+**/*lock
+
+**/*bak
+**/*del
